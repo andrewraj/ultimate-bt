@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, UltimateBTActivity!</string>
+    <string name="send">Send</string>
     <string name="app_name">Ultimate BT</string>
+    <string name="edit_text_out">edit_text_out</string>
 
 </resources>
