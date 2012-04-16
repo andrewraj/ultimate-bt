@@ -4,5 +4,10 @@
     <string name="send">Send</string>
     <string name="app_name">Ultimate BT</string>
     <string name="edit_text_out">edit_text_out</string>
-
+	
+    <!-- Options Menu -->
+    <string name="connect">Connect a device</string>
+    <string name="discoverable">Discoverable</string>
+    <string name="about">About</string>
+    
 </resources>
