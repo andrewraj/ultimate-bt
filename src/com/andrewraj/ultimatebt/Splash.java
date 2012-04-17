@@ -22,7 +22,7 @@ public class Splash extends Activity {
 					e.printStackTrace();
 					
 				}finally{
-					Intent openStartingPoint = new Intent("android.intent.action.MAIN"); //Android Manifest
+					Intent openStartingPoint = new Intent("com.andrewraj.ultimatebt.ULTIMATEBT");
 					startActivity(openStartingPoint); 
 				}
 			}
