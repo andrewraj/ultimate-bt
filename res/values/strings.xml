@@ -11,6 +11,6 @@
     <string name="about">About</string>
     <string name="paired_devices_title">Paired Devices</string>
     <string name="title_newDevices">New Discoverable Devices</string>
-    <string name="button_scan">Scan For Devices</string>
+    <string name="button_scan">Retrieve Discovered Devices</string>
     
 </resources>
