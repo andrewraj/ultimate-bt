@@ -9,5 +9,7 @@
     <string name="connect">Connect a device</string>
     <string name="discoverable">Discoverable</string>
     <string name="about">About</string>
+    <string name="paired_devices_title">Paired Devices</string>
+    <string name="title_newDevices">New Discoverable Devices</string>
     
 </resources>

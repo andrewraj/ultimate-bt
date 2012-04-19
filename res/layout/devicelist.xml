@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView 
+        android:id="@+id/paired_devices_title"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:text="@string/paired_devices_title"
+        android:textColor="#FFF"
+        android:background="#330033"
+        android:gravity="center"
+        android:layout_gravity="center"        
+        />
+    
+    <ListView 
+    	android:id="@+id/paired_devices"
+    	android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stackFromBottom="true"
+        android:layout_weight="1"    
+        
+    />
+    
+    
+    <TextView 
+        android:id="@+id/title_newDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_newDevices"
+        android:textColor="#FFF"
+        android:background="#330033"
+        android:gravity="center"
+        android:layout_gravity="center"
+                
+        />
+    
+    <ListView 
+        android:id="@+id/view_newDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stackFromBottom="true"
+        android:layout_weight="2"
+        
+        />
+    
+    <Button
+        android:id="@+id/bScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_scan" 
+        
+        />
+
+</LinearLayout>
