@@ -1,7 +1,5 @@
 package com.andrewraj.ultimatebt;
 
-import com.andrewraj.ultimatebt.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +17,7 @@ public class DeviceList extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 	
-			Button scanButton = (Button) findViewById(R.id.button_scan); // bScan
+			Button scanButton = (Button) findViewById(R.id.bScan); // bScan
 				scanButton.setOnClickListener(new OnClickListener() {
 					
 					public void onClick(View v) {
