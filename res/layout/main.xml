@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 	android:gravity="center" 
-	android:background="#6b6b6b" >
+	android:background="#F5D0A9" >
 	
     <ListView
         android:id="@+id/in"
@@ -28,11 +28,15 @@
             android:layout_weight="1"
             android:layout_gravity="bottom"
         />
-        <Button android:id="@+id/button_send"
+
+        <ImageButton
+            android:id="@+id/button_send"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/send"
-        />
+            android:layout_height="match_parent"
+            android:src="@drawable/send" 
+            android:background="@null" />
+
+
     </LinearLayout>
     
     
