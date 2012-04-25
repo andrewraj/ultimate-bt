@@ -17,6 +17,7 @@
 package com.andrewraj.ultimatebt;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
@@ -38,6 +39,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -71,7 +74,7 @@ public class UltimateBT extends Activity {
     private TextView mTitle;
     private ListView mConversationView;
     private EditText mOutEditText;
-    private Button mSendButton;
+    private ImageButton mSendButton;
 
     // Name of the connected device
     private String mConnectedDeviceName = null;
@@ -159,7 +162,7 @@ public class UltimateBT extends Activity {
         mOutEditText.setOnEditorActionListener(mWriteListener);
 
         // Initialize the send button with a listener that for click events
-        mSendButton = (Button) findViewById(R.id.button_send);
+        mSendButton = (ImageButton) findViewById(R.id.button_send);
         mSendButton.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
@@ -356,15 +359,29 @@ public class UltimateBT extends Activity {
             serverIntent = new Intent(this, DeviceListActivity.class);
             startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
             return true;
-        case R.id.insecure_connect_scan:
-            // Launch the DeviceListActivity to see devices and do scan
-            serverIntent = new Intent(this, DeviceListActivity.class);
-            startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
-            return true;
         case R.id.discoverable:
             // Ensure this device is discoverable by others
             ensureDiscoverable();
             return true;
+        case R.id.about:
+            //set up dialog
+            Dialog dialog = new Dialog(UltimateBT.this);
+            dialog.setContentView(R.layout.about);
+            dialog.setTitle("Ultimate BT");
+            dialog.setCancelable(true);
+            //there are a lot of settings, for dialog, check them all out!
+ 
+                //set up text
+                TextView text = (TextView) dialog.findViewById(R.id.TextView01);
+                text.setText(R.string.about_text);
+ 
+                //set up image view
+                ImageView img = (ImageView) dialog.findViewById(R.id.ImageView01);
+                img.setImageResource(R.drawable.icon);
+ 
+            //now that the dialog is set up, it's time to show it    
+            dialog.show();
+	        return true;
         }
         return false;
     }
