@@ -25,4 +25,5 @@
     <string name="discoverable">Make discoverable</string>
     <string name="about">About</string>
     <string name="about_text">This project is created by Andrew Raj, Prajesh Ananthan and Nicolas Raj</string>
+    <string name="message">Input any text</string>
 </resources>

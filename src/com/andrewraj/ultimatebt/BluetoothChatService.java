@@ -32,10 +32,7 @@ import android.os.Message;
 import android.util.Log;
 
 /**
- * This class does all the work for setting up and managing Bluetooth
- * connections with other devices. It has a thread that listens for
- * incoming connections, a thread for connecting with a device, and a
- * thread for performing data transmissions when connected.
+ * Set up and manage connections to other devices
  */
 public class BluetoothChatService {
     // Debugging
