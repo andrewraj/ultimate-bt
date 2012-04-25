@@ -34,7 +34,6 @@
       style="?android:attr/windowTitleStyle"
       android:layout_width="wrap_content"
       android:layout_height="match_parent"
-      android:layout_weight="1"
       android:paddingLeft="45dip"
       android:gravity="center_vertical"
     />
@@ -45,7 +44,6 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textColor="#fff"
-        android:layout_weight="1"
         android:gravity="center_vertical"
     />
 </RelativeLayout>
