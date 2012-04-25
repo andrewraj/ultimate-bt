@@ -22,7 +22,6 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -33,9 +32,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.SimpleCursorAdapter;
+import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * This is the main Activity that displays the current chat session.
@@ -87,9 +89,7 @@ public class UltimateBT extends Activity {
     // Member object for the chat services
     private BluetoothChatService mChatService = null;
 
-    private SimpleCursorAdapter dbAdapter;
-    
-    
+   
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -169,6 +169,14 @@ public class UltimateBT extends Activity {
                 TextView view = (TextView) findViewById(R.id.edit_text_out);
                 String message = view.getText().toString();
                 sendMessage(message);
+            }
+        });
+        
+        mSendButton.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                // Perform action on click
+            	sendMessage("fizz");
+                return true;
             }
         });
 
@@ -272,18 +280,28 @@ public class UltimateBT extends Activity {
                 byte[] writeBuf = (byte[]) msg.obj;
                 // construct a string from the buffer
                 String writeMessage = new String(writeBuf);
-                mConversationArrayAdapter.add("Me:  " + writeMessage);
+                if(writeMessage.equals("fizz"))
+                {
+                	Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                	long milliseconds = 1000;
+                    v.vibrate(milliseconds);
+                    mConversationArrayAdapter.add("You have fizzed " + mConnectedDeviceName + "!");
+                }
+                else
+                {
+                    mConversationArrayAdapter.add("Me:  " + writeMessage);
+                }
                 break;
             case MESSAGE_READ:
                 byte[] readBuf = (byte[]) msg.obj;
                 // construct a string from the valid bytes in the buffer
                 String readMessage = new String(readBuf, 0, msg.arg1);
-                if(readMessage.equals("buzz"))
+                if(readMessage.equals("fizz"))
                 {
                 	Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 	long milliseconds = 1000;
                     v.vibrate(milliseconds);
-                    mConversationArrayAdapter.add(mConnectedDeviceName+" has buzzed  you!");
+                    mConversationArrayAdapter.add(mConnectedDeviceName+" has fizzed  you!");
                 }
                 else
                 {
@@ -385,5 +403,7 @@ public class UltimateBT extends Activity {
         }
         return false;
     }
+    
+
 
 }
