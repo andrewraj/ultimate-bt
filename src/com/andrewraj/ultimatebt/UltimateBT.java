@@ -17,7 +17,6 @@
 package com.andrewraj.ultimatebt;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
@@ -38,7 +37,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,6 +97,8 @@ public class UltimateBT extends Activity {
         mTitle = (TextView) findViewById(R.id.title_left_text);
         mTitle.setText(R.string.app_name);
         mTitle = (TextView) findViewById(R.id.title_right_text);
+        mTitle.setTextColor(0xFFFF0000);
+        
 
         // Get local Bluetooth adapter
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -108,7 +108,7 @@ public class UltimateBT extends Activity {
             Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
             finish();
             return;
-        }       
+        }
     }
 
     @Override
@@ -260,6 +260,7 @@ public class UltimateBT extends Activity {
                 case BluetoothChatService.STATE_CONNECTED:
                     mTitle.setText(R.string.title_connected_to);
                     mTitle.append(mConnectedDeviceName);
+                    mTitle.setTextColor(0xff00ff00);
                     mConversationArrayAdapter.clear();
                     break;
                 case BluetoothChatService.STATE_CONNECTING:
@@ -377,23 +378,11 @@ public class UltimateBT extends Activity {
             ensureDiscoverable();
             return true;
         case R.id.about:
-            //set up dialog
-            Dialog dialog = new Dialog(UltimateBT.this);
-            dialog.setContentView(R.layout.about);
-            dialog.setTitle("Ultimate BT");
-            dialog.setCancelable(true);
-            //there are a lot of settings, for dialog, check them all out!
- 
-                //set up text
-                TextView text = (TextView) dialog.findViewById(R.id.TextView01);
-                text.setText(R.string.about_text);
- 
-                //set up image view
-                ImageView img = (ImageView) dialog.findViewById(R.id.ImageView01);
-                img.setImageResource(R.drawable.icon);
- 
-            //now that the dialog is set up, it's time to show it    
-            dialog.show();
+      	
+        	AboutDialog about = new AboutDialog(this);
+        	about.setTitle("About");
+        	about.show();
+        	
 	        return true;
         }
         return false;

@@ -231,7 +231,7 @@ public class BluetoothChatService {
         // Send a failure message back to the Activity
         Message msg = mHandler.obtainMessage(UltimateBT.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(UltimateBT.TOAST, "Unable to connect device");
+        bundle.putString(UltimateBT.TOAST, "Connection failed to device");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
 
