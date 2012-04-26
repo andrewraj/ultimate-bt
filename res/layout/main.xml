@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-        android:gravity="center" 
-        android:background="#F5D0A9" >
+    android:gravity="center" 
+    android:background="#F5D0A9" >
         
     <ListView
         android:id="@+id/in"
@@ -37,9 +37,6 @@
             android:layout_height="match_parent"
             android:src="@drawable/right"
             android:background="@null" />
-
-
     </LinearLayout>
-    
-    
+   
 </LinearLayout>

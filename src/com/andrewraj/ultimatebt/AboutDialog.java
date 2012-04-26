@@ -1,3 +1,8 @@
+/* 
+ * Coded by Andrew Raj
+ * www.andrewraj.com
+ */
+
 package com.andrewraj.ultimatebt;
 
 import java.io.BufferedReader;
@@ -11,19 +16,18 @@ import android.text.Html;
 import android.text.util.Linkify;
 import android.graphics.Color;
 import android.widget.TextView;
+
+
 public class AboutDialog extends Dialog{
 	private static Context mContext = null;
 	public AboutDialog(Context context) {
 		super(context);
 		mContext = context;
 	}
-
-	/**
-	 * Standard Android on create method that gets called when the activity initialized.
-	 */
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		// Converting from HTML into text view
 		setContentView(R.layout.about);
 		TextView tv = (TextView)findViewById(R.id.legal_text);
 		tv.setText(Html.fromHtml(readRawTextFile(R.raw.legal)));

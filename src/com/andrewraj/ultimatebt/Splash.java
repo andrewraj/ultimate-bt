@@ -1,3 +1,8 @@
+/* 
+ * Coded by Andrew Raj
+ * www.andrewraj.com
+ */
+
 package com.andrewraj.ultimatebt;
 
 import android.app.Activity;
