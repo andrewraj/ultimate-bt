@@ -6,7 +6,7 @@
     <!--  BluetoothChat -->
     <string name="send">Send</string>
     <string name="not_connected">You are not connected to a device</string>
-    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Ultimate BT.</string>
     <string name="title_connecting">connecting&#8230;</string>
     <string name="title_connected_to">connected: </string>
     <string name="title_not_connected">not connected</string>
@@ -25,5 +25,7 @@
     <string name="discoverable">Make discoverable</string>
     <string name="about">About</string>
     <string name="about_text">This project is created by Andrew Raj, Prajesh Ananthan and Nicolas Raj</string>
-    <string name="message">Input any text</string>
+    <string name="message">Type here&#8230;</string>
+    <string name="legal_text"></string>
+    <string name="info_text"></string>
 </resources>

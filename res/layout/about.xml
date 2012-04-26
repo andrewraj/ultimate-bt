@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
- android:layout_width="wrap_content" android:layout_height="wrap_content">
- 
-<ImageView android:id="@+id/ImageView01"
- android:layout_width="wrap_content" android:layout_height="wrap_content"
- android:layout_centerHorizontal="true" />
- 
- <ScrollView android:id="@+id/ScrollView01"
- android:layout_width="wrap_content" android:layout_below="@+id/ImageView01"
- android:layout_height="200px">
- 
- <TextView android:text="@+id/TextView01" android:id="@+id/TextView01"
- android:layout_width="wrap_content" android:layout_height="wrap_content" />
- 
- </ScrollView>
- 
- 
-</RelativeLayout>
+<TableLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:stretchColumns="*">
+<TableRow>
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/icon_big"
+android:contentDescription="@string/app_name"
+android:layout_gravity="left|center"/>
+<TextView
+android:id="@+id/info_text"
+android:gravity="center"
+android:layout_gravity="left"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content" />
+</TableRow>
+<TableRow>
+<TextView
+android:id="@+id/legal_text"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:textSize="10dip"
+android:textStyle="italic"
+android:layout_span="2"
+android:layout_margin="8dip"
+android:textColor="#cccccc" />
+</TableRow>
+</TableLayout>
