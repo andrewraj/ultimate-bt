@@ -1,0 +1,3 @@
+# Planned Enhancement #
+
+In the future, We plan to add more features and functionalities to the application. Some of features we plan to add are File Transfer, Emoticons and Motion Fizzle.  The user interface experience is also contrived to be more friendlier and much interactive. In addition to that, We would provide users the option to customize their settings via an “Advanced Settings” functionality within the application.
